@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b7a53">
+  <title>Kas RT-01 Kiyaran, Gombang</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div>
+    <div class="eyebrow">TRANSPARANSI KEUANGAN WARGA</div>
+    <h1>Kas RT-01</h1>
+    <p>Kiyaran, Gombang</p>
+  </div>
+  <button id="loginBtn" class="btn light">🔐 Login Bendahara</button>
+</header>
+
+<main class="container">
+  <section class="cards">
+    <article class="card balance"><span>💰 Saldo Kas</span><strong id="saldo">Rp0</strong></article>
+    <article class="card income"><span>📥 Pemasukan</span><strong id="pemasukan">Rp0</strong></article>
+    <article class="card expense"><span>📤 Pengeluaran</span><strong id="pengeluaran">Rp0</strong></article>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <div><h2>📋 Laporan Kas</h2><p id="status">Memuat data...</p></div>
+      <div class="filters">
+        <select id="month"><option value="all">Semua bulan</option></select>
+        <input id="search" placeholder="Cari transaksi...">
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Tanggal</th><th>Jenis</th><th>Keterangan</th><th>Nominal</th><th id="aksiHead">Aksi</th></tr></thead>
+        <tbody id="rows"><tr><td colspan="5" class="empty">Belum ada data.</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="adminPanel" class="panel hidden">
+    <div class="panel-head"><div><h2>🧾 Kelola Transaksi</h2><p>Panel ini hanya muncul untuk bendahara.</p></div><button id="logoutBtn" class="btn danger">Keluar</button></div>
+    <form id="txForm" class="form">
+      <input type="hidden" id="editId">
+      <label>Tanggal<input type="date" id="tanggal" required></label>
+      <label>Jenis<select id="jenis"><option value="pemasukan">📥 Pemasukan</option><option value="pengeluaran">📤 Pengeluaran</option></select></label>
+      <label>Nominal (Rp)<input type="number" id="nominal" min="0" step="1" required></label>
+      <label class="wide">Keterangan<input id="keterangan" maxlength="150" placeholder="Contoh: Iuran warga September" required></label>
+      <div class="form-actions"><button class="btn primary" type="submit" id="saveBtn">➕ Simpan Transaksi</button><button class="btn secondary" type="button" id="cancelBtn">Batal</button></div>
+    </form>
+  </section>
+
+  <section class="notice">
+    <b>🔎 Informasi:</b> Laporan ini dapat dilihat seluruh warga. Hak tambah, edit, dan hapus dikunci di Firebase Security Rules sehingga bukan sekadar disembunyikan dari tampilan.
+  </section>
+</main>
+
+<footer>Kas RT-01 • Kiyaran, Gombang • Transparan, tertib, guyub</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

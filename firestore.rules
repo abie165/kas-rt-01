@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /transaksi/{transactionId} {
+      // Semua orang boleh melihat laporan.
+      allow read: if true;
+
+      // Hanya pengguna yang login boleh menambah/mengubah/menghapus.
+      // Buat HANYA akun bendahara di Firebase Authentication.
+      allow create, update, delete: if request.auth != null;
+    }
+  }
+}

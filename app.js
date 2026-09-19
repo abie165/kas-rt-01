@@ -9,12 +9,12 @@ import { getFirestore, collection, addDoc, updateDoc, deleteDoc, doc, query, ord
   Jangan menaruh password bendahara di file ini.
 */
 const firebaseConfig = {
-  apiKey: "GANTI_DENGAN_API_KEY",
-  authDomain: "GANTI_DENGAN_PROJECT.firebaseapp.com",
-  projectId: "GANTI_DENGAN_PROJECT_ID",
-  storageBucket: "GANTI_DENGAN_STORAGE_BUCKET",
-  messagingSenderId: "GANTI_DENGAN_MESSAGING_SENDER_ID",
-  appId: "GANTI_DENGAN_APP_ID"
+  apiKey: "AIzaSyBbl3eDpRdAvJdJlZyHQFZ-B67ODGkwj-4",
+  authDomain: "kas-rt-01-kiyaran.firebaseapp.com",
+  projectId: "kas-rt-01-kiyaran",
+  storageBucket: "kas-rt-01-kiyaran.firebasestorage.app",
+  messagingSenderId: "16157998643",
+  appId: "1:16157998643:web:6422143fdc9c29d7c4ed46"
 };
 
 const app = initializeApp(firebaseConfig);
